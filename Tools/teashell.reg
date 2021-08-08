@@ -1,0 +1,113 @@
+REGEDIT4
+
+[HKEY_CLASSES_ROOT\TeaShell.Shell.TeaFilePropertyHandler]
+@="TeaShell.Shell.TeaFilePropertyHandler"
+
+[HKEY_CLASSES_ROOT\TeaShell.Shell.TeaFilePropertyHandler\CLSID]
+@="{90D13A20-4E01-4B1D-BF94-669C4113A010}"
+
+[HKEY_CLASSES_ROOT\CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}]
+@="TeaShell.Shell.TeaFilePropertyHandler"
+
+[HKEY_CLASSES_ROOT\CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="TeaShell.Shell.TeaFilePropertyHandler"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32\7.7.7.7]
+"Class"="TeaShell.Shell.TeaFilePropertyHandler"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\ProgId]
+@="TeaShell.Shell.TeaFilePropertyHandler"
+
+[HKEY_CLASSES_ROOT\CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\TeaShell.Preview.TeaFilePreviewHandler]
+@="TeaShell.Preview.TeaFilePreviewHandler"
+
+[HKEY_CLASSES_ROOT\TeaShell.Preview.TeaFilePreviewHandler\CLSID]
+@="{7740EDAD-5E9C-43CF-9E63-13083E01065F}"
+
+[HKEY_CLASSES_ROOT\CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}]
+@="TeaShell.Preview.TeaFilePreviewHandler"
+
+[HKEY_CLASSES_ROOT\CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="TeaShell.Preview.TeaFilePreviewHandler"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32\7.7.7.7]
+"Class"="TeaShell.Preview.TeaFilePreviewHandler"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\ProgId]
+@="TeaShell.Preview.TeaFilePreviewHandler"
+
+[HKEY_CLASSES_ROOT\CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\TeaTime.Shell.TeaFilePropertyHandler]
+@="TeaTime.Shell.TeaFilePropertyHandler"
+
+[HKEY_CLASSES_ROOT\TeaTime.Shell.TeaFilePropertyHandler\CLSID]
+@="{C948E728-265C-40D2-A5BD-7759F5D75519}"
+
+[HKEY_CLASSES_ROOT\CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}]
+@="TeaTime.Shell.TeaFilePropertyHandler"
+
+[HKEY_CLASSES_ROOT\CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="TeaTime.Shell.TeaFilePropertyHandler"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\InprocServer32\7.7.7.7]
+"Class"="TeaTime.Shell.TeaFilePropertyHandler"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\ProgId]
+@="TeaTime.Shell.TeaFilePropertyHandler"
+
+[HKEY_CLASSES_ROOT\CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]
+
+[HKEY_CLASSES_ROOT\XamlGeneratedNamespace.GeneratedInternalTypeHelper]
+@="XamlGeneratedNamespace.GeneratedInternalTypeHelper"
+
+[HKEY_CLASSES_ROOT\XamlGeneratedNamespace.GeneratedInternalTypeHelper\CLSID]
+@="{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}"
+
+[HKEY_CLASSES_ROOT\CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}]
+@="XamlGeneratedNamespace.GeneratedInternalTypeHelper"
+
+[HKEY_CLASSES_ROOT\CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\InprocServer32]
+@="mscoree.dll"
+"ThreadingModel"="Both"
+"Class"="XamlGeneratedNamespace.GeneratedInternalTypeHelper"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\InprocServer32\7.7.7.7]
+"Class"="XamlGeneratedNamespace.GeneratedInternalTypeHelper"
+"Assembly"="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null"
+"RuntimeVersion"="v4.0.30319"
+"CodeBase"="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll"
+
+[HKEY_CLASSES_ROOT\CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\ProgId]
+@="XamlGeneratedNamespace.GeneratedInternalTypeHelper"
+
+[HKEY_CLASSES_ROOT\CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}]

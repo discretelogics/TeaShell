@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi"
+     xmlns:util="http://schemas.microsoft.com/wix/UtilExtension"
+     xmlns:netfx="http://schemas.microsoft.com/wix/NetFxExtension" >
+    <?include Variables.wxi?>
+    
+    <Product Id="33BFDC47-4C25-4083-95EC-F474CC93EE4E" Name="DiscreteLogics TeaShell" Language="1033" 
+             Version="1.0.0.2" 
+             Manufacturer="DiscreteLogics" 
+             UpgradeCode="73A7DC1C-4A55-40D7-8D19-FBE762278E50">
+        
+        <?ifdef is64Bit ?>
+        <Package InstallerVersion="400" Compressed="yes" InstallScope="perMachine" Manufacturer="DiscreteLogics" 
+                 Description="Windows Shell Extension for TeaFiles." 
+                 Platform="x64" />
+        <?else?>
+        <Package InstallerVersion="400" Compressed="yes" InstallScope="perMachine" Manufacturer="DiscreteLogics" 
+                 Description="Windows Shell Extension for TeaFiles." />
+        <?endif?>
+        
+        <MajorUpgrade DowngradeErrorMessage="A newer version of TeaShell is already installed." />
+        <Media Id="1" Cabinet="TeaShell.cab" EmbedCab="yes" />
+
+        <!-- UI -->
+        <UIRef Id="WixUI_FeatureTree" />
+        
+        <!--<WixVariable Id="WixUILicenseRtf" Value="License.rtf" />-->
+        <WixVariable Id="WixUIDialogBmp" Value="SetupBackground.bmp" />
+        <WixVariable Id="WixUIBannerBmp" Value="SetupBanner.bmp" />
+        <WixVariable Id="WixUILicenseRtf" Value="License.rtf" />
+
+        <!-- Preconditions -->
+        <?ifdef is64Bit ?>
+        <Condition Message="This installer does not support 32-bit Windows! ">VersionNT64</Condition>
+        <?else?>
+        <Condition Message="This installer does not support 64-bit Windows! ">NOT VersionNT64</Condition>
+        <?endif?>
+        <PropertyRef Id="NETFRAMEWORK40FULL" />
+        <Condition Message="Pleae install Microsoft .NET 4.0 first">Installed OR NETFRAMEWORK40FULL</Condition>
+        <Condition Message="OS must be Windows Vista, Server 2008, Windows 7 or higher.">Installed OR VersionNT >= 600</Condition>
+
+        <!-- directory structure -->
+        <Directory Id="TARGETDIR" Name="SourceDir">
+            
+            <?ifdef is64Bit ?>
+            <Directory Id="ProgramFiles64Folder">
+                <Directory Id="DISCRETELOGICSFOLDER" Name="DiscreteLogics">
+                    <Directory Id="APPLICATIONFOLDER" Name="TeaShell" />
+                </Directory>
+            </Directory>
+            <?else?>
+            <Directory Id="ProgramFilesFolder">
+                <Directory Id="DISCRETELOGICSFOLDER" Name="DiscreteLogics">
+                    <Directory Id="APPLICATIONFOLDER" Name="TeaShell" />
+                </Directory>
+            </Directory>
+            <?endif?>
+            
+            <Directory Id="LocalAppDataFolder">
+                <Directory Id="DISCRETELOGICSAPPFOLDER" Name="DiscreteLogics">
+                    <Directory Id="LOCALAPPDATA" Name="TeaShell" >
+                        <Directory Id="DOW" Name="Dow" />
+                    </Directory>
+                </Directory>
+            </Directory>
+
+			<Directory Id="ProgramMenuFolder">
+				<Directory Id="ApplicationProgramsFolder" Name="TeaShell"/>
+			</Directory>						
+
+        </Directory>
+
+		<DirectoryRef Id="ApplicationProgramsFolder">
+			<Component Id="ApplicationShortcut" Guid="7EC16FE3-44E5-4C69-AABB-AE7AE60E9103">
+				<Shortcut Id="ApplicationStartMenuShortcut" Name="DiscreteLogics TeaShell License"
+						  Description="Provides License Configuration"
+						  Target="[APPLICATIONFOLDER]DiscreteLogics.TeaShell.exe" WorkingDirectory="APPLICATIONFOLDER" />
+				<RemoveFolder Id="ApplicationProgramsFolder" On="uninstall" />
+				<RegistryValue Root="HKCU" Key="Software\DiscreteLogics\TeaShell" Name="installed" Type="integer" Value="1" KeyPath="yes" />
+			</Component>
+		</DirectoryRef>
+
+    	<!-- TeaShell application icon (shows in add/remove programs) -->
+    	<!--<Icon Id="icon.ico" SourceFile="MySourceFiles\icon.ico"/>
+        <Property Id="ARPPRODUCTICON" Value="icon.ico" />-->
+
+    	<!-- custom actions to (un)register the property system -->
+    	<Binary Id="ca" SourceFile="..\Setup.Actions\bin\Release\Setup.Actions.CA.exe" />
+    	<CustomAction Id="RegPSCA" BinaryKey="ca" DllEntry="RegisterPS" Execute="deferred" Return="check" Impersonate="no" />
+    	<CustomAction Id="UnRegPSCA" BinaryKey="ca" DllEntry="UnRegisterPS" Execute="deferred" Return="check" Impersonate="no" />
+		<CustomAction Id="Start" BinaryKey="ca" DllEntry="StartTeaShell" Execute="deferred" Return="ignore" Impersonate="yes" /> <!-- we need to impersonate here to open the Dow folder -->
+    	<InstallExecuteSequence>
+    		<!-- install -->
+			<Custom Action="RegPSCA" After="InstallFiles">Not Installed</Custom>
+			<Custom Action="Start" Before="InstallFinalize">Not Installed</Custom>
+    		<!-- uninstall -->
+    		<Custom Action="UnRegPSCA" Before="InstallFinalize">Installed</Custom>
+    	</InstallExecuteSequence>
+
+    	<!-- the one and only feature -->
+    	<Feature Id="CoreFeature" Title="TeaFile Shell Extensions" Level="1">
+    		<ComponentGroupRef Id="TeaShell.Assembly" />
+    		<ComponentGroupRef Id="TeaShell.References" />
+    		<ComponentGroupRef Id="TeaShell.AppData" />
+    		<ComponentGroupRef Id="TeaShell.FileFormat" />
+			<ComponentRef Id="ApplicationShortcut" />
+		</Feature>
+    	<Feature Id="DemoDataFeature" Title="Folder with Demo Files" Level="1">
+    		<ComponentGroupRef Id="Dow" />
+    	</Feature>
+    </Product>
+
+    
+
+	<!-- files inside DiscreteLogics/TeaShell -->
+	<Fragment>
+		<ComponentGroup Id="TeaShell.References" Directory="APPLICATIONFOLDER">
+			<Component Id="FILE_EZShellExtensions" Guid="ACD464B3-F06A-4050-926F-D574C9F72577" Win64="$(var.64YesNo)">
+				<File Id="EZS" KeyPath="yes" Source="$(var.sources)LogicNP.EZShellExtensions.dll" />
+			</Component>
+            <Component Id="FILE_PropertyDesc" Guid="7D4DE590-001C-42CF-A3EC-A096ABC89D32" Win64="$(var.64YesNo)">
+                <File Id="PD" KeyPath="yes" Source="tea.propdesc" />
+            </Component>
+		</ComponentGroup>
+	    <ComponentGroup Id="TeaShell.AppData">
+	        <Component Id="C_TeaShellconfig" Guid="120A49C6-3DB7-467F-A515-0DE9772F3B67" Win64="$(var.64YesNo)" Directory="LOCALAPPDATA">
+	            <RegistryValue KeyPath="yes" Root="HKCU" Key="SOFTWARE\DiscreteLogics\TeaShell" Name="Installed" Type="integer" Value="1" Action="write" />
+	            <File Id="F_TeaShellconfig" Name="TeaShell.config" />
+	            <RemoveFolder Id="RemoveAppData" On="uninstall" />
+	        </Component>
+	        <Component Id="C_RemoveDL" Guid="56B3EEE9-11D6-433D-9BED-9763B4D96DBD" Directory="DISCRETELOGICSAPPFOLDER">
+	            <RegistryValue KeyPath="yes" Root="HKCU" Key="SOFTWARE\DiscreteLogics\TeaShell" Name="Installed" Type="integer" Value="1" Action="write" />
+	            <RemoveFolder Id="RemoveDow" On="uninstall" Directory="DOW" />
+	            <RemoveFolder Id="RemoveAppFolder" On="uninstall" Directory="DISCRETELOGICSAPPFOLDER" />
+	        </Component>
+	    </ComponentGroup>
+	</Fragment>
+
+</Wix>

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <?include Variables.wxi?>
+    <Fragment>
+        <ComponentGroup Id="TeaShell.FileFormat" Directory="APPLICATIONFOLDER" >
+            <Component Id="C_TeaFileIcon" Guid="A8D4E83B-1668-44AB-9BCF-1986D9A2B386" Win64="$(var.64YesNo)">
+                <File Id="F_TeaFileIcon" Name="TeaFile.ico" />
+            </Component>
+            <Component Id="TeaFileRegistry" Guid="7A85078C-685C-43C9-879D-BFDA895BFEB8" Win64="$(var.64YesNo)">
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile\DefaultIcon" Value="[APPLICATIONFOLDER]TeaFile.ico" Type="string" Action="write" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

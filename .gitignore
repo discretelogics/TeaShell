@@ -1,0 +1,13 @@
+/.hg
+/.hgignore
+.vs/
+builds/
+/Obfuscator
+/packages/
+**/bin/**
+**/obj/**
+/TeaShell.v11.suo
+/TeaShell_Release_AnyCPU.obproj
+/TestResults.xlsx
+/__hg/
+/__git/

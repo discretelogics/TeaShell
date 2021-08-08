@@ -1,0 +1,228 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.30703</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{084A4625-77C9-47A2-92F3-D6A70AAB9557}</ProjectGuid>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <AssemblyName>DiscreteLogics.TeaShell</AssemblyName>
+    <SignAssembly>false</SignAssembly>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>2.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <OutputType>Library</OutputType>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <RegisterForComInterop>false</RegisterForComInterop>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <OutputType>Library</OutputType>
+    <DebugSymbols>false</DebugSymbols>
+    <DebugType>none</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup>
+    <RootNamespace>TeaTime.TeaShell</RootNamespace>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject>TeaTime.TeaShell.Program</StartupObject>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|AnyCPU'">
+    <DebugType>full</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+    <Optimize>false</Optimize>
+    <UseVSHostingProcess>false</UseVSHostingProcess>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OutputType>WinExe</OutputType>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <RunPostBuildEvent>OnOutputUpdated</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup />
+  <PropertyGroup>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="DiscreteLogics.TeaFiles, Version=1.0.0.205, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\DiscreteLogics.TeaFiles.1.0.0.205\lib\net40\DiscreteLogics.TeaFiles.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.CryptoLicensing, Version=7.0.0.0, Culture=neutral, PublicKeyToken=4a3c0a4c668b48b4">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\LogicNP.CryptoLicensing.dll</HintPath>
+    </Reference>
+    <Reference Include="LogicNP.EZShellExtensions, Version=5.1.0.0, Culture=neutral, PublicKeyToken=748d50477e8bfbe0">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Lib\LogicNP.EZShellExtensions.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xaml" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="WindowsBase" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controls\CasualDataControl.cs" />
+    <Compile Include="Controls\ClockImage.xaml.cs">
+      <DependentUpon>ClockImage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\DiscreteLogicsH.xaml.cs">
+      <DependentUpon>DiscreteLogicsH.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\LayoutControl.xaml.cs">
+      <DependentUpon>LayoutControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Leaf.xaml.cs">
+      <DependentUpon>Leaf.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\SplitGrid.xaml.cs">
+      <DependentUpon>SplitGrid.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Splitter.xaml.cs">
+      <DependentUpon>Splitter.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\TeaFilePreviewControl.xaml.cs">
+      <DependentUpon>TeaFilePreviewControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Extensions.cs" />
+    <Compile Include="Licensing\LicenseManager.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Settings.cs" />
+    <Compile Include="Shell\TeaFilePreviewHandler.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Shell\TeaFilePropertyHandler.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Snapshot\DesignData.cs" />
+    <Compile Include="Snapshot\LicensedSnapshot.cs" />
+    <Compile Include="Snapshot\SnapshotManager.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="EZShellExtensions.shelldata" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Shell\TeaFilePreviewHandler.resx">
+      <DependentUpon>TeaFilePreviewHandler.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Resources\OratorStd.otf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\ClockImage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\DiscreteLogicsH.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\LayoutControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Leaf.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\SplitGrid.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\Splitter.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Resource Include="Themes\Generic.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Resource>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Controls\Resources\DL1_Leaf.png" />
+    <Resource Include="Controls\Resources\Matrix.png" />
+    <Resource Include="Controls\Resources\TeaShellLabel.png" />
+    <Resource Include="Controls\Resources\TimeSeries.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\TeaFilePreviewControl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.manifest" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <PropertyGroup>
+    <PostBuildEvent>"C:\Program Files (x86)\LogicNP Software\Crypto Obfuscator For .Net 2011 R3\co.exe" projectfile="$(TargetDir)TeaShell.obproj"</PostBuildEvent>
+  </PropertyGroup>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

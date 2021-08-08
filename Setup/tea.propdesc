@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<schema xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://schemas.microsoft.com/windows/2006/propertydescription" schemaVersion="1.0">
+    <propertyDescriptionList publisher="DiscreteLogics" product="Properties">
+        <propertyDescription name="TeaFile.ItemType" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="10" xmlns="">
+            <description>Name of a single item in the file</description>
+            <searchInfo inInvertedIndex="false" isColumn="true" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="ItemType" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.First" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="11" xmlns="">
+            <description>First Item in the file. If the file holds a timeseries, this is the time of the first item, otherwise the first property of the first item.</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="First" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.Last" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="12" xmlns="">
+            <description>Last Item in the file. If the file holds a timeseries, this is the time of the last item, otherwise the first property of the last item.</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="Last" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.Count" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="13" xmlns="">
+            <description>The number of items in the file</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="Count" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.ContentDescription" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="14" xmlns="">
+            <description>The file's content description</description>
+            <searchInfo inInvertedIndex="false" isColumnentfer="true" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="ContentDescription" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.IsTimeSeries" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="15" xmlns="">
+            <description>Indicates whether the file holds a time series or a matrix.</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="IsTimeSeries" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.Fields" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="16" xmlns="">
+            <description>The names of the item's fields.</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="Fields" />
+        </propertyDescription>
+        <propertyDescription name="TeaFile.FieldTypes" formatID="{90d13a20-4e01-4b1d-bf94-669c4113a010}" propID="17" xmlns="">
+            <description>The types of the item's fields.</description>
+            <searchInfo inInvertedIndex="false" isColumn="false" columnIndexType="NotIndexed" />
+            <typeInfo type="String" isViewable="true" isQueryable="true" isInnate="True" multipleValues="False" />
+            <labelInfo label="FieldTypes" />
+        </propertyDescription>
+    </propertyDescriptionList>
+</schema>

@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <?include Variables.wxi?>
+    <Fragment>
+        <ComponentGroup Id="TeaShell.Assembly" Directory="APPLICATIONFOLDER">
+            <Component Id="TeaShell" Guid="ADB42FB2-463A-41B5-9AB3-A24133D0758A" Win64="$(var.64YesNo)">
+                
+                <File Id="DiscreteLogicsTeaShellexe" Source="$(var.sources)CO/DiscreteLogics.TeaShell.exe" />
+                
+                <!-- Preview -->
+                <!-- com -->
+                <Class Id="{7740EDAD-5E9C-43CF-9E63-13083E01065F}"
+                       Context="InprocServer32"
+                       Description="TeaTime.TeaShell.TeaFilePreviewHandler"
+                       ThreadingModel="both"
+                       ForeignServer="mscoree.dll" >
+                    <ProgId Id="TeaTime.TeaShell.TeaFilePreviewHandler" Description="TeaTime.TeaShell.TeaFilePreviewHandler" />
+                </Class>
+                <RegistryValue Root="HKCR" Key=".tea" Value="TeaTime.TeaFile" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32\$(var.FileVersion)" Name="Class" Value="TeaTime.TeaShell.TeaFilePreviewHandler" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32\$(var.FileVersion)" Name="Assembly" Value="DiscreteLogics.TeaShell, Version=$(var.FileVersion), Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32\$(var.FileVersion)" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32\$(var.FileVersion)" Name="CodeBase" Value="file:///[#DiscreteLogicsTeaShellexe]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32" Name="Class" Value="TeaTime.TeaShell.TeaFilePreviewHandler" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32" Name="Assembly" Value="DiscreteLogics.TeaShell, Version=$(var.FileVersion), Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32" Name="CodeBase" Value="file:///[#DiscreteLogicsTeaShellexe]" Type="string" Action="write" />
+
+                <!-- handler -->
+                <RegistryValue Root="HKCR" Key=".tea\shellex\{8895b1c6-b41f-4c1c-a562-0d564250836f}" Value="{7740EDAD-5E9C-43CF-9E63-13083E01065F}" Type="string" Action="write" />
+
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}" Name="AppID" Value="{7E89F764-7BD3-4AA5-A05C-0777F1BD6280}" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}" Name="DisplayName" Value="TeaFile Preview" Type="string" Action="write" />
+
+                <RegistryValue Root="HKCR" Key="AppID\{7E89F764-7BD3-4AA5-A05C-0777F1BD6280}" Name="DllSurrogate" Value="%SystemRoot%\system32\prevhost.exe" Type="expandable" Action="write" />
+                <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\PreviewHandlers" Name="{7740edad-5e9c-43cf-9e63-13083e01065f}" Value="TeaFile Preview" Type="string" Action="write" />
+
+                <!-- Properties -->
+                <Class Id="{90D13A20-4E01-4B1D-BF94-669C4113A010}"
+                       Context="InprocServer32"
+                       Description="TeaTime.TeaShell.TeaFilePropertyHandler"
+                       ThreadingModel="both"
+                       ForeignServer="mscoree.dll">
+                    <ProgId Id="TeaTime.TeaShell.TeaFilePropertyHandler" Description="TeaTime.TeaShell.TeaFilePropertyHandler" />
+                </Class>
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\Implemented Categories\{62C8FE65-4EBB-45e7-B440-6E39B2CDBF29}" Value="" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32\$(var.FileVersion)" Name="Class" Value="TeaTime.TeaShell.TeaFilePropertyHandler" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32\$(var.FileVersion)" Name="Assembly" Value="DiscreteLogics.TeaShell, Version=$(var.FileVersion), Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32\$(var.FileVersion)" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32\$(var.FileVersion)" Name="CodeBase" Value="file:///[#DiscreteLogicsTeaShellexe]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32" Name="Class" Value="TeaTime.TeaShell.TeaFilePropertyHandler" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32" Name="Assembly" Value="DiscreteLogics.TeaShell, Version=$(var.FileVersion), Culture=neutral, PublicKeyToken=null" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32" Name="RuntimeVersion" Value="v4.0.30319" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32" Name="CodeBase" Value="file:///[#DiscreteLogicsTeaShellexe]" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}" Name="DisableProcessIsolation" Value="1" Type="integer" Action="write" />
+
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="PreviewDetails"   Value="prop:TeaFile.ItemType;TeaFile.Count;TeaFile.First;TeaFile.Last;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.FieldTypes;TeaFile.IsTimeSeries" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="TileInfo"         Value="prop:TeaFile.ItemType;TeaFile.Count;TeaFile.First;TeaFile.Last;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.FieldTypes;TeaFile.IsTimeSeries" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="ExtendedTileInfo" Value="prop:TeaFile.ItemType;TeaFile.Count;TeaFile.First;TeaFile.Last;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.FieldTypes;TeaFile.IsTimeSeries" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="InfoTip"          Value="prop:TeaFile.ItemType;TeaFile.Count;TeaFile.First;TeaFile.Last;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.FieldTypes;TeaFile.IsTimeSeries" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="QuickTip"         Value="prop:TeaFile.ItemType;TeaFile.Count;TeaFile.First;TeaFile.Last;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.FieldTypes;TeaFile.IsTimeSeries" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="FullDetails"      Value="prop:TeaFile.ItemType;TeaFile.Count;TeaFile.First;TeaFile.Last;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.FieldTypes;TeaFile.IsTimeSeries" Type="string" Action="write" />
+
+                <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Explorer\KindMap" Name=".tea" Value="Document" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="ContentViewModeForBrowse"    Value="prop:~System.ItemNameDisplay;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.ItemType;TeaFile.First;TeaFile.Last;TeaFile.Count;" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="ContentViewModeForSearch"    Value="prop:~System.ItemNameDisplay;TeaFile.ContentDescription;TeaFile.Fields;TeaFile.ItemType;TeaFile.First;TeaFile.Last;TeaFile.Count;" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="ContentViewModeLayoutPatternForBrowse" Value="alpha" Type="string" Action="write" />
+                <RegistryValue Root="HKCR" Key="TeaTime.TeaFile" Name="ContentViewModeLayoutPatternForSearch" Value="alpha" Type="string" Action="write" />
+
+                <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\PropertySystem\PropertyHandlers\.tea" Value="{90D13A20-4E01-4B1D-BF94-669C4113A010}" Type="string" Action="write"  />
+                <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\PropertySystem\PropertyHandlers\atea" Value="{90D13A20-4E01-4B1D-BF94-669C4113A010}" Type="string" Action="write"  />
+                <RegistryValue Root="HKLM" Key="SOFTWARE\Microsoft\Windows\CurrentVersion\Shell Extensions\Approved" Name="{90D13A20-4E01-4B1D-BF94-669C4113A010}" Value="TeaFilePropertyHandler" Type="string" Action="write" />
+
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

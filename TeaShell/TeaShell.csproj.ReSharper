@@ -1,0 +1,8 @@
+<Configuration>
+  <NamespaceFolders>
+    <SkipFolder>084A4625-77C9-47A2-92F3-D6A70AAB9557/d:Controls</SkipFolder>
+    <SkipFolder>084A4625-77C9-47A2-92F3-D6A70AAB9557/d:Licensing</SkipFolder>
+    <SkipFolder>084A4625-77C9-47A2-92F3-D6A70AAB9557/d:Shell</SkipFolder>
+    <SkipFolder>084A4625-77C9-47A2-92F3-D6A70AAB9557/d:Snapshot</SkipFolder>
+  </NamespaceFolders>
+</Configuration>

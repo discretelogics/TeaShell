@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?include Build.wxi?>
+<Include>
+
+    
+    
+    <?if $(var.platform) = "x64" ?>
+        <?define 64YesNo = "yes" ?>
+        <?define is64Bit = "true" ?>
+    <?else ?>
+        <?define 64YesNo = "no" ?>
+    <?endif ?>
+    
+</Include>

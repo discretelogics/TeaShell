@@ -1,0 +1,52 @@
+﻿<UserControl x:Class="TeaTime.TeaShell.SplitGrid"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:TeaShell="clr-namespace:TeaTime.TeaShell" 
+             mc:Ignorable="d" 
+             d:DesignHeight="217" d:DesignWidth="433"
+             x:Name="control"
+             >
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <DataGrid x:Name="grid" 
+              AutoGenerateColumns="false"
+              Background="White"
+              HorizontalAlignment="Left"
+              ColumnHeaderStyle="{StaticResource FlatDataGridHeader}"
+              BorderThickness="0"
+              GridLinesVisibility="Horizontal"
+              HeadersVisibility="Column"
+              HorizontalScrollBarVisibility="Disabled"
+              VerticalScrollBarVisibility="Disabled" 
+              HorizontalGridLinesBrush="{DynamicResource GridLineBrush}" CanUserResizeRows="False" SelectionUnit="Cell" IsReadOnly="True" IsHitTestVisible="False" >
+        <DataGrid.Resources>
+            <Style x:Key="ItemCellStyle" TargetType="{x:Type DataGridCell}">
+                <!--<Setter Property="Border.Background" Value="{StaticResource ItemBackground}"/>-->
+                <Setter Property="Border.Margin" Value="-1"/>
+            </Style>
+            <Style TargetType="{x:Type DataGridRow}">
+                <Style.Triggers>
+                    <DataTrigger Binding="{Binding IsSplit}" Value="True">
+                        <Setter Property="Template">
+                            <Setter.Value>
+                                <ControlTemplate>
+                                    
+                                        <TeaShell:Splitter Height="24" />
+                                    
+                                </ControlTemplate>
+                            </Setter.Value>
+                        </Setter>
+                    </DataTrigger>
+                </Style.Triggers>
+            </Style>
+        </DataGrid.Resources>
+    </DataGrid>
+</UserControl>

@@ -1,0 +1,265 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:TeaShell="clr-namespace:TeaTime.TeaShell" 
+             x:Class="TeaTime.TeaShell.TeaFilePreviewControl"
+             x:ClassModifier="internal" 
+             mc:Ignorable="d" 
+             d:DesignHeight="726" 
+             d:DesignWidth="478" 
+             x:Name="control"
+             DataContext="{x:Static TeaShell:DesignData.Sample}"
+             FontFamily="Segoe UI" FontSize="12">
+    <UserControl.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="../Themes/generic.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <BooleanToVisibilityConverter x:Key="BoolToVisibility" />
+        </ResourceDictionary>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition/>
+            <RowDefinition Height="24"/>
+        </Grid.RowDefinitions>
+
+        <!-- header -->
+        <Border 
+			Grid.Row="0"
+			Background="{DynamicResource ItemBackground}" 
+			BorderThickness="0" SnapsToDevicePixels="True">
+            <Grid Margin="0,0,0,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="36"/>
+                </Grid.ColumnDefinitions>
+                <WrapPanel VerticalAlignment="Center" Margin="0,0,18,0" >
+                    <TeaShell:CasualDataControl Data="{Binding Snapshot.Description.ItemDescription}" Margin="0" x:Name="a">
+                        <TeaShell:CasualDataControl.NullTemplate>
+                            <ControlTemplate>
+                                <TextBlock FontSize="24" Text="-" FontFamily="Verdana" Margin="2,0,16,0" Foreground="{StaticResource LightColor}"/>
+                            </ControlTemplate>
+                        </TeaShell:CasualDataControl.NullTemplate>
+                        <TextBlock FontSize="24" Name="b" Text="{Binding Snapshot.Description.ItemDescription.ItemTypeName}" FontFamily="Verdana" Margin="2,0,8,0" VerticalAlignment="Bottom" Opacity="0.8"/>
+                    </TeaShell:CasualDataControl>
+                    <TextBlock FontSize="11pt" FontFamily="Verdana" VerticalAlignment="Bottom" Name="c" Text="{Binding Snapshot.Description.ContentDescription}" Opacity="0.8"/>
+                </WrapPanel>
+                <Image Grid.Column="1" VerticalAlignment="Top" Stretch="None" Height="32" Width="32">
+                    <Image.Style>
+                        <Style TargetType="{x:Type Image}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding Snapshot.IsTimeSeries}" Value="True">
+                                    <Setter Property="Source" Value="Resources/TimeSeries.png"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Snapshot.IsTimeSeries}" Value="False">
+                                    <Setter Property="Source" Value="Resources/Matrix.png"/>
+                                </DataTrigger>
+                                <DataTrigger Binding="{Binding Snapshot.IsTimeSeries}" Value="Unknown">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                        </Style>
+                    </Image.Style>
+                </Image>
+            </Grid>
+        </Border>
+
+        <!-- main -->
+        
+        <TeaShell:CasualDataControl Grid.Row="1" Data="{Binding Snapshot}" Margin="2,2,2,-4" x:Name="main" >
+            <!-- Datacontext remains LicensedSnapshot -->
+            <ScrollViewer DataContext="{Binding Snapshot}"
+			HorizontalScrollBarVisibility="Auto" 
+			VerticalScrollBarVisibility="Auto" 
+            Template="{DynamicResource ScrollViewerControlTemplate1}" Margin="0,0,0,0" Padding="0" >
+                <StackPanel Background="White" VerticalAlignment="Top" >
+                    <Border Style="{DynamicResource SectionBorderStyle}" x:Name="NameValuesSection">
+                        <StackPanel>
+                            <Label Content="Name / Values" Style="{DynamicResource SectionLabelStyle}" />
+                            <TeaShell:CasualDataControl DataContext="{Binding Description.NameValues}" Data="{Binding}" NullText="none" x:Name="nvc">
+                                <ListView ItemsSource="{Binding}" FontStretch="SemiCondensed" >
+                                    <ListView.View>
+                                        <GridView>
+                                            <GridViewColumn Header="Name" Width="Auto">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding Name}" Margin="-1,0,0,0" Padding="0,0,6,0" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="Value" Width="Auto">
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock FontWeight="Bold" Text="{Binding ValueText}" Padding="0,0,6,0" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                            <GridViewColumn Header="Kind" Width="Auto" >
+                                                <GridViewColumn.CellTemplate>
+                                                    <DataTemplate>
+                                                        <TextBlock Text="{Binding Kind}" Padding="0,0,6,0" />
+                                                    </DataTemplate>
+                                                </GridViewColumn.CellTemplate>
+                                            </GridViewColumn>
+                                        </GridView>
+                                    </ListView.View>
+                                </ListView>
+                            </TeaShell:CasualDataControl>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{DynamicResource SectionBorderStyle}" x:Name="ItemTypeSection" VerticalAlignment="Bottom">
+                        <StackPanel>
+                            <Label Content="Itemtype" Style="{DynamicResource SectionLabelStyle}" />
+                            <TeaShell:CasualDataControl DataContext="{Binding Description.ItemDescription}" Data="{Binding}" NullText="not available.">
+                                <StackPanel>
+                                    <Grid HorizontalAlignment="Left">
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition />
+                                            <ColumnDefinition />
+                                        </Grid.ColumnDefinitions>
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                            <RowDefinition />
+                                        </Grid.RowDefinitions>
+                                        <Label Content="Typename" Margin="0,0,16,2" />
+                                        <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding ItemTypeName}" Style="{StaticResource ValueStyle}" />
+                                        <Label Grid.Column="0" Grid.Row="1" Content="Size" Margin="0,0,0,2" />
+                                        <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding ItemSize}" Style="{StaticResource ValueStyle}"/>
+                                        <Label Grid.Column="0" Grid.Row="2" Content="Fields" Margin="0,0,0,2" />
+                                        <ListView ItemsSource="{Binding Fields}" Grid.Column="1" Grid.Row="2">
+                                            <ListView.View>
+                                                <GridView>
+                                                    <GridViewColumn Header="Name">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <TextBlock Text="{Binding Name}" FontWeight="Bold" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn Header="Type" DisplayMemberBinding="{Binding FieldType}"  />
+                                                    <GridViewColumn Header="Offset" DisplayMemberBinding="{Binding Offset}"    />
+                                                    <GridViewColumn Header="Time">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <TeaShell:ClockImage Margin="3,-7,0,0" Visibility="{Binding IsTime, Converter={StaticResource BoolToVisibility}}" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                    <GridViewColumn Header="Event Time">
+                                                        <GridViewColumn.CellTemplate>
+                                                            <DataTemplate>
+                                                                <TeaShell:ClockImage Margin="3,-7,0,0" Fill="#ffbb3f" Stroke="#8f423d"  Visibility="{Binding IsEventTime, Converter={StaticResource BoolToVisibility}}" />
+                                                            </DataTemplate>
+                                                        </GridViewColumn.CellTemplate>
+                                                    </GridViewColumn>
+                                                </GridView>
+                                            </ListView.View>
+                                        </ListView>
+                                    </Grid>
+
+                                </StackPanel>
+                            </TeaShell:CasualDataControl>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{DynamicResource SectionBorderStyle}" x:Name="TimeFormatSection" VerticalAlignment="Bottom">
+                        <StackPanel>
+                            <Label Content="Time Format" Style="{DynamicResource SectionLabelStyle}" />
+                            <TeaShell:CasualDataControl DataContext="{Binding Description.Timescale}" Data="{Binding}" NullText="not available.">
+                                <Grid HorizontalAlignment="Left">
+                                    <Grid.ColumnDefinitions>
+                                        <ColumnDefinition />
+                                        <ColumnDefinition />
+                                    </Grid.ColumnDefinitions>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                        <RowDefinition />
+                                    </Grid.RowDefinitions>
+                                    <Label Content="Epoch" />
+                                    <TextBlock Grid.Column="1" Grid.Row="0" Text="{Binding Epoch}" Style="{StaticResource ValueStyle}" />
+                                    <Label Grid.Column="0" Grid.Row="1" Content="Ticks per Day" />
+                                    <TextBlock Grid.Column="1" Grid.Row="1" Text="{Binding TicksPerDay}" Style="{StaticResource ValueStyle}"/>
+                                    <Label Grid.Column="0" Grid.Row="2" Content="Well known Scale" Margin="0,0,16,0" />
+                                    <TextBlock Grid.Column="1" Grid.Row="2" Text="{Binding WellKnownName}" Style="{StaticResource ValueStyle}"/>
+                                </Grid>
+                            </TeaShell:CasualDataControl>
+                        </StackPanel>
+                    </Border>
+                    <Border Style="{DynamicResource SectionBorderStyle}" x:Name="ItemsSection">
+                        <StackPanel>
+                            <Label Content="Items" Style="{StaticResource SectionLabelStyle}" />
+                            <TeaShell:CasualDataControl Data="{Binding Description.ItemDescription}" Margin="2,8,2,2">
+                                <TeaShell:CasualDataControl.NullTemplate>
+                                    <ControlTemplate>
+                                        <StackPanel Style="{StaticResource LightStyle}">
+                                            <TextBlock Text="not available." />
+                                            <TextBlock Text="{Binding ItemAreaSize, StringFormat=Size of Item Area: \{0\}}" />
+                                        </StackPanel>
+                                    </ControlTemplate>
+                                </TeaShell:CasualDataControl.NullTemplate>
+                                <TeaShell:SplitGrid Items="{Binding Items}" />
+                            </TeaShell:CasualDataControl>
+                        </StackPanel>
+                    </Border>
+                </StackPanel>
+            </ScrollViewer>
+            
+            <TeaShell:CasualDataControl.NullTemplate>
+                <ControlTemplate>
+                    <Grid>
+                        <TextBlock Foreground="{StaticResource LightColor}" 
+                                   Text="The file could not be read, this appears to be no TeaFile." HorizontalAlignment="Center" VerticalAlignment="Center" >
+                        <TextBlock.Style>
+                            <Style TargetType="{x:Type TextBlock}">
+                            <Style.Triggers>
+                                <DataTrigger Binding="{Binding V}" Value="false">
+                                    <Setter Property="Visibility" Value="Hidden"/>
+                                </DataTrigger>
+                            </Style.Triggers>
+                            </Style>
+                        </TextBlock.Style>
+                        </TextBlock>
+                        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center" 
+                                    Visibility="{Binding E, Converter={StaticResource BoolToVisibility}}">
+                            <TextBlock HorizontalAlignment="Center" FontSize="14" >
+                                <TextBlock>No License is available. Buy at</TextBlock>
+                                <TextBlock Foreground="{StaticResource LightColor}" ><Hyperlink NavigateUri="http://discretelogics.com/Shop"
+        	                    Foreground="{StaticResource ScrollBarColor}" >discretelogics.com</Hyperlink></TextBlock>
+                            </TextBlock>                            
+                        </StackPanel>
+                    </Grid>
+                </ControlTemplate>
+            </TeaShell:CasualDataControl.NullTemplate>
+        </TeaShell:CasualDataControl>
+
+        <!-- TeaShell Image flies across scrollview in row 1 -->
+        <!--<Image x:Name="TeaShellLogo"
+               HorizontalAlignment="Right" 
+               Grid.Row="1" 
+               Source="Resources/TeaShellLabel.png" 
+               VerticalAlignment="Bottom" 
+               Stretch="None" 
+               Panel.ZIndex="-1000" 
+               Margin="0,0,2,-2" />-->        
+        
+        <!-- footer -->
+        <Grid Grid.Row="2" Margin="0,-11,0,0">
+            <StackPanel Orientation="Horizontal" Margin="0,0,3,0" HorizontalAlignment="Right">
+                <TeaShell:DiscreteLogicsH VerticalAlignment="Bottom" Margin="0,0,4,4" />
+                <TextBlock FontFamily="Resources/#Orator Std" FontSize="10.667" VerticalAlignment="Bottom" Margin="0,0,0,2"><Run Text="DISCRETE"/><Bold><Run Text="LOGICS"/></Bold></TextBlock>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Style="{StaticResource LightStyle}">
+                <TextBlock Text="License: " VerticalAlignment="Bottom" Margin="2,0,0,2" />
+                <TextBlock Background="White" Text="{Binding L}" ToolTip="{Binding Version, ElementName=control}" Style="{StaticResource LightStyle}" Margin="0,0,0,2" VerticalAlignment="Bottom" />
+                <TextBlock Background="White" Text="(Evaluation)" Foreground="Maroon" Visibility="{Binding EV, Converter={StaticResource BoolToVisibility}}" VerticalAlignment="Bottom" Style="{StaticResource LightStyle}" Margin="4,0,0,2" />
+            </StackPanel>
+        </Grid>
+        <!-- footer -->
+    </Grid>
+
+</UserControl>

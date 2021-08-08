@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="TeaTime.TeaShell.DiscreteLogicsH"
+             x:ClassModifier="internal"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" Height="8.75" Width="147.75">
+    <UserControl.Resources>
+        <LinearGradientBrush x:Key="LogoBrush" EndPoint="1,0.5" StartPoint="0,0.5">
+            <LinearGradientBrush.GradientStops>
+                <GradientStop Offset="0.54" Color="#ffd0a410"/>
+                <GradientStop Offset="1.00" Color="#ffbc5e0e"/>
+            </LinearGradientBrush.GradientStops>
+        </LinearGradientBrush>
+    </UserControl.Resources>
+    <Canvas>
+        <Path  Fill="{StaticResource LogoBrush}">
+            <Path.Data>
+                <GeometryGroup>
+                    <RectangleGeometry Rect="0,7,12,1" />
+                    <RectangleGeometry Rect="0,7,12,1" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="15" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,7,12,1" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="30" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,7,12,1" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="45" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,7,12,1" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="60" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,1,12,7" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="75" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,1,12,7" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="90" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,1,12,7" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="105" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,1,12,7" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="120" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                    <RectangleGeometry Rect="0,1,12,7" >
+                        <RectangleGeometry.Transform>
+                            <TranslateTransform X="135" />
+                        </RectangleGeometry.Transform>
+                    </RectangleGeometry>
+                </GeometryGroup>
+            </Path.Data>
+        </Path>
+    </Canvas>
+</UserControl>

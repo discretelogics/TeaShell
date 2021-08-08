@@ -1,0 +1,171 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <ComponentGroup Id="NewFilesGroup">
+            <Component Id="cmp8C8C7F680E0820DE45631E1FC4356691" Directory="TARGETDIR" Guid="3FFC21CC-62C9-4D4E-84FE-8CBD5479D4E1" KeyPath="yes">
+                <RegistryKey Key="TeaShell.Shell.TeaFilePropertyHandler" Root="HKCR">
+                    <RegistryValue Value="TeaShell.Shell.TeaFilePropertyHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp55D177EFD9F3DC6353B449B90C5413E1" Directory="TARGETDIR" Guid="550BE0F9-C3C8-4643-9124-9C2871C4CE3E" KeyPath="yes">
+                <RegistryKey Key="TeaShell.Shell.TeaFilePropertyHandler\CLSID" Root="HKCR">
+                    <RegistryValue Value="{90D13A20-4E01-4B1D-BF94-669C4113A010}" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp4F6DC3273563223200428F6B5EA5E990" Directory="TARGETDIR" Guid="4CD95431-CC5A-4636-A0BF-FE387825B2DE" KeyPath="yes">
+                <RegistryKey Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}" Root="HKCR">
+                    <RegistryValue Value="TeaShell.Shell.TeaFilePropertyHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp52D2FCFECC83A5ED12306B59C12A71E8" Directory="TARGETDIR" Guid="569B296D-2D01-4F01-BA47-5F1B90718297" KeyPath="yes">
+                <RegistryKey Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32" Root="HKCR">
+                    <RegistryValue Value="mscoree.dll" Type="string" />
+                    <RegistryValue Name="ThreadingModel" Value="Both" Type="string" />
+                    <RegistryValue Name="Class" Value="TeaShell.Shell.TeaFilePropertyHandler" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpFD3C71E7E2546CD0AE6B40F1873C1E9E" Directory="TARGETDIR" Guid="77C0DF13-AB4F-47A5-A0A7-2F4C2579C9C2" KeyPath="yes">
+                <RegistryKey Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\InprocServer32\7.7.7.7" Root="HKCR">
+                    <RegistryValue Name="Class" Value="TeaShell.Shell.TeaFilePropertyHandler" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpA30241BE62C2CCAD040ED9AC12DD048C" Directory="TARGETDIR" Guid="9EBB3C50-AEE2-422E-BB73-F3C322B2753D" KeyPath="yes">
+                <RegistryKey Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\ProgId" Root="HKCR">
+                    <RegistryValue Value="TeaShell.Shell.TeaFilePropertyHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpCAFCE7D00F6C7137231F16E482C65DE6" Directory="TARGETDIR" Guid="7361256F-C032-48ED-9F2C-27AFC4418016" KeyPath="yes">
+                <RegistryKey Action="createAndRemoveOnUninstall" Key="CLSID\{90D13A20-4E01-4B1D-BF94-669C4113A010}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Root="HKCR" />
+            </Component>
+            <Component Id="cmpF28D43BFF9CBC40D1281B26D42055DC8" Directory="TARGETDIR" Guid="C3AA3679-87CD-4062-AF28-F3F67C119D2F" KeyPath="yes">
+                <RegistryKey Key="TeaShell.Preview.TeaFilePreviewHandler" Root="HKCR">
+                    <RegistryValue Value="TeaShell.Preview.TeaFilePreviewHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp24563F672312FB0043CB3E69FBEB137B" Directory="TARGETDIR" Guid="B60C504C-5BAF-45E6-9AE2-C239B866FABE" KeyPath="yes">
+                <RegistryKey Key="TeaShell.Preview.TeaFilePreviewHandler\CLSID" Root="HKCR">
+                    <RegistryValue Value="{7740EDAD-5E9C-43CF-9E63-13083E01065F}" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp1A8CE0A29E53B33340B9930141CF0BE5" Directory="TARGETDIR" Guid="8E28C61C-8710-4041-90B2-4E0B3E28B540" KeyPath="yes">
+                <RegistryKey Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}" Root="HKCR">
+                    <RegistryValue Value="TeaShell.Preview.TeaFilePreviewHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp1C4E7453F71A4AEE7577D83822185C2F" Directory="TARGETDIR" Guid="4EA80F43-D37A-4108-8D52-6CE4E3930325" KeyPath="yes">
+                <RegistryKey Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32" Root="HKCR">
+                    <RegistryValue Value="mscoree.dll" Type="string" />
+                    <RegistryValue Name="ThreadingModel" Value="Both" Type="string" />
+                    <RegistryValue Name="Class" Value="TeaShell.Preview.TeaFilePreviewHandler" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp058F411B2AA550590EB7BCEFBEA95BD2" Directory="TARGETDIR" Guid="727FD0CE-7131-473E-B03F-7DF4B4389446" KeyPath="yes">
+                <RegistryKey Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\InprocServer32\7.7.7.7" Root="HKCR">
+                    <RegistryValue Name="Class" Value="TeaShell.Preview.TeaFilePreviewHandler" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp73CC859F082E683BB8789A4173EF0F71" Directory="TARGETDIR" Guid="F0E06752-81AE-4C64-9252-9F59A580F912" KeyPath="yes">
+                <RegistryKey Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\ProgId" Root="HKCR">
+                    <RegistryValue Value="TeaShell.Preview.TeaFilePreviewHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpCDC438A04A9316CE2ADB48D26EF8C6C7" Directory="TARGETDIR" Guid="3B9B6E5A-DFA1-4E57-9DE8-DDC89DD51975" KeyPath="yes">
+                <RegistryKey Action="createAndRemoveOnUninstall" Key="CLSID\{7740EDAD-5E9C-43CF-9E63-13083E01065F}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Root="HKCR" />
+            </Component>
+            <Component Id="cmp0A81917217104E4EC277C257274F8CE5" Directory="TARGETDIR" Guid="3B0CA418-B65A-4191-8FC6-676A9012BAEB" KeyPath="yes">
+                <RegistryKey Key="TeaTime.Shell.TeaFilePropertyHandler" Root="HKCR">
+                    <RegistryValue Value="TeaTime.Shell.TeaFilePropertyHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpFA940952176D3AAF43888882E5072B52" Directory="TARGETDIR" Guid="9080A07F-8CB4-446F-BA84-377FEB788760" KeyPath="yes">
+                <RegistryKey Key="TeaTime.Shell.TeaFilePropertyHandler\CLSID" Root="HKCR">
+                    <RegistryValue Value="{C948E728-265C-40D2-A5BD-7759F5D75519}" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp57632075F43A01D72EA7E4291EB42664" Directory="TARGETDIR" Guid="F047F30D-3642-4B3E-9916-D34BDEDCCD8E" KeyPath="yes">
+                <RegistryKey Key="CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}" Root="HKCR">
+                    <RegistryValue Value="TeaTime.Shell.TeaFilePropertyHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp1A8F968B914B25D623FDA4C1E6254CF4" Directory="TARGETDIR" Guid="B4FC8C71-90F5-477A-BEAE-A5183E138F30" KeyPath="yes">
+                <RegistryKey Key="CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\InprocServer32" Root="HKCR">
+                    <RegistryValue Value="mscoree.dll" Type="string" />
+                    <RegistryValue Name="ThreadingModel" Value="Both" Type="string" />
+                    <RegistryValue Name="Class" Value="TeaTime.Shell.TeaFilePropertyHandler" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp8C7EE6D3808028FBC13D1523B34C3807" Directory="TARGETDIR" Guid="A8C2F558-00E4-41D7-A5F0-6CC26BC70702" KeyPath="yes">
+                <RegistryKey Key="CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\InprocServer32\7.7.7.7" Root="HKCR">
+                    <RegistryValue Name="Class" Value="TeaTime.Shell.TeaFilePropertyHandler" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp30D48A66D79C8A24EE36061D463E4644" Directory="TARGETDIR" Guid="45DC1347-EC4E-48EE-B34E-294939F60A64" KeyPath="yes">
+                <RegistryKey Key="CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\ProgId" Root="HKCR">
+                    <RegistryValue Value="TeaTime.Shell.TeaFilePropertyHandler" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp4107CADB71E10BBCE7AFCF271798FA0A" Directory="TARGETDIR" Guid="C61A8779-56B6-492E-82B3-1AC7EF9BCBD5" KeyPath="yes">
+                <RegistryKey Action="createAndRemoveOnUninstall" Key="CLSID\{C948E728-265C-40D2-A5BD-7759F5D75519}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Root="HKCR" />
+            </Component>
+            <Component Id="cmp4091FA594796A378E590CC2B3CA35343" Directory="TARGETDIR" Guid="5F6A991A-B66D-4ED4-86C5-73369F765FDA" KeyPath="yes">
+                <RegistryKey Key="XamlGeneratedNamespace.GeneratedInternalTypeHelper" Root="HKCR">
+                    <RegistryValue Value="XamlGeneratedNamespace.GeneratedInternalTypeHelper" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpC9018175F836EDF44023AD1645687281" Directory="TARGETDIR" Guid="2B73250A-D2B9-462A-81A6-A5272CB0DDC5" KeyPath="yes">
+                <RegistryKey Key="XamlGeneratedNamespace.GeneratedInternalTypeHelper\CLSID" Root="HKCR">
+                    <RegistryValue Value="{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp7BA208C035CA3D71F66CB3DDC8F45BF6" Directory="TARGETDIR" Guid="BE5565BF-3211-4863-B108-65643954C576" KeyPath="yes">
+                <RegistryKey Key="CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}" Root="HKCR">
+                    <RegistryValue Value="XamlGeneratedNamespace.GeneratedInternalTypeHelper" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpED34EA9A99ED595B9D0DC27F87251557" Directory="TARGETDIR" Guid="BA3FC8C4-3324-4BD0-9B0F-7B5DAB732FBD" KeyPath="yes">
+                <RegistryKey Key="CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\InprocServer32" Root="HKCR">
+                    <RegistryValue Value="mscoree.dll" Type="string" />
+                    <RegistryValue Name="ThreadingModel" Value="Both" Type="string" />
+                    <RegistryValue Name="Class" Value="XamlGeneratedNamespace.GeneratedInternalTypeHelper" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmp0654BCCB616D5A86762951A24BA66567" Directory="TARGETDIR" Guid="CD17488D-9D75-4497-89EF-529729268A8D" KeyPath="yes">
+                <RegistryKey Key="CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\InprocServer32\7.7.7.7" Root="HKCR">
+                    <RegistryValue Name="Class" Value="XamlGeneratedNamespace.GeneratedInternalTypeHelper" Type="string" />
+                    <RegistryValue Name="Assembly" Value="DiscreteLogics.TeaShell, Version=7.7.7.7, Culture=neutral, PublicKeyToken=null" Type="string" />
+                    <RegistryValue Name="RuntimeVersion" Value="v4.0.30319" Type="string" />
+                    <RegistryValue Name="CodeBase" Value="file:///C:/Dev/Reps/TeaShell/TeaShell/bin/Release/DiscreteLogics.TeaShell.dll" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpC5C85EE2ADF729F863F017AA3C88A0C7" Directory="TARGETDIR" Guid="C081723E-5067-498D-93A5-EB96A296194C" KeyPath="yes">
+                <RegistryKey Key="CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\ProgId" Root="HKCR">
+                    <RegistryValue Value="XamlGeneratedNamespace.GeneratedInternalTypeHelper" Type="string" />
+                </RegistryKey>
+            </Component>
+            <Component Id="cmpF60487A263E271D853EED33A3068F902" Directory="TARGETDIR" Guid="94617D90-3743-4CAF-B4F8-7E8A5157BF1B" KeyPath="yes">
+                <RegistryKey Action="createAndRemoveOnUninstall" Key="CLSID\{236EA7EC-D9DC-37F3-A7F4-C3C63C646E95}\Implemented Categories\{62C8FE65-4EBB-45E7-B440-6E39B2CDBF29}" Root="HKCR" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>

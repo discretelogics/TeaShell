@@ -1,0 +1,4 @@
+Version Number
+4 virtual machines (Win7 / Vista) 32/64
+Quick Obfuscation Analysis, get binaries from one of the test machines
+check files with various time scales

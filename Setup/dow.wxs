@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Wix xmlns="http://schemas.microsoft.com/wix/2006/wi">
+    <Fragment>
+        <ComponentGroup Id="Dow" Directory="DOW">
+            <Component Id="cmpAA278A8AD835D5A7705D2E4795B7F3D0" Guid="A932A177-B394-4793-95D2-45ECA349D11D">
+                <RegistryValue KeyPath="yes" Root="HKCU" Key="SOFTWARE\DiscreteLogics\TeaShell" Name="DemoData" Type="integer" Value="1" Action="write" />
+                <File Id="fil2CC2111E0BAF2ECD783A70170425A7E1" Source="Dow\AA.tea" />
+                <File Id="filB6C932A69997365A1883AFA0C02DBB09" Source="Dow\AXP.tea" />
+                <File Id="filD21D7940DFD66A1C65D48A1598D9B4E5" Source="Dow\BA.tea" />
+                <File Id="filFDF9BFE8173EAD64B20DA24FA75F4C71" Source="Dow\BAC.tea" />
+                <File Id="fil475899639467FF17082E96AC1B934342" Source="Dow\CAT.tea" />
+                <File Id="filF1A95BEF636B3EA642623F1E9474C5F1" Source="Dow\CSCO.tea" />
+                <File Id="filE71D065B98EA6F0660F0159C239A2FA5" Source="Dow\CVX.tea" />
+                <File Id="filDCCAA9FB408403DEEA3B01AE38CDC54E" Source="Dow\DD.tea" />
+                <File Id="filDC1C6C446A740D7EA91F36AC56E8C6ED" Source="Dow\DIS.tea" />
+                <File Id="filC327DC302A47F24015411B84D65B044B" Source="Dow\GE.tea" />
+                <File Id="filB430331710E882352ACFA275C5441588" Source="Dow\HD.tea" />
+                <File Id="fil9FC82A43481918C7C5D7A42BA861CC5F" Source="Dow\HPQ.tea" />
+                <File Id="fil6AB7E5B072E91225B97F8B184CE003E2" Source="Dow\IBM.tea" />
+                <File Id="filDFCB07CCEB699A5FCD92DB9310871C3A" Source="Dow\INTC.tea" />
+                <File Id="fil94F693AD04C55C43EA49A6ED3163C946" Source="Dow\JNJ.tea" />
+                <File Id="filE194DE54CFA93D1EB2EFA87B92F75F21" Source="Dow\JPM.tea" />
+                <File Id="fil8D4EE2086E0E88DC759AC8757175C4E2" Source="Dow\KFT.tea" />
+                <File Id="filE452726058B29A71F36B2345D6A91EB9" Source="Dow\KO.tea" />
+                <File Id="fil0134FEF641F664A117C4F47AB62981C2" Source="Dow\MCD.tea" />
+                <File Id="fil0FC4BA294533361DFDA93AAC66918E1C" Source="Dow\MMM.tea" />
+                <File Id="fil70ADFF67667C1756318555EB0BF03B8B" Source="Dow\MRK.tea" />
+                <File Id="fil95D0F52DF5568ECCBC38F307E3E2806F" Source="Dow\MSFT.tea" />
+                <File Id="fil36AC9F9DBCEFF9A3DC5EBEB1CB8F1816" Source="Dow\PFE.tea" />
+                <File Id="fil5226F09E6BBF9351B84E0454FF8850B6" Source="Dow\PG.tea" />
+                <File Id="fil7F97B8E11C8D890E4C47ADE4AE727981" Source="Dow\T.tea" />
+                <File Id="fil790701EE1E3279DFCC9E54AA49DF18B2" Source="Dow\TRV.tea" />
+                <File Id="fil6D88248B17E44FA45CE3AEF4CB121B45" Source="Dow\UTX.tea" />
+                <File Id="filAD9C7B41A32407F63F47A7640BCA9C7D" Source="Dow\VZ.tea" />
+                <File Id="fil64F99490999EA68BFC21731FEAAB3AA7" Source="Dow\WMT.tea" />
+                <File Id="fil10BEEDF615199690DBC0273663A249FC" Source="Dow\XOM.tea" />
+            </Component>
+        </ComponentGroup>
+    </Fragment>
+</Wix>
